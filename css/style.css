@@ -95,41 +95,22 @@ main h2{padding: 0 0 2rem; font-size: 2.5rem}
 #main-bt-container a:active{color: #dfcded}
 #main-bt-container a:active i{opacity: .7}
 #main-bt-container a svg{position: absolute; width: 100%; height: 100%; left: 2%; top: 10%;overflow: visible;z-index: -1}
-#main-bt-container a .line{stroke-dasharray: 260; stroke-width: 1px; fill: transparent; stroke: rgb(234 201 255 / 62%); filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px rgba(219, 219, 219, 0.8)) drop-shadow(0 0 3px rgba(219, 219, 219, 0.5));  animation: svgAnimation 6s linear infinite}
+#main-bt-container a .line{stroke-dasharray: 260; stroke-dashoffset: 0; stroke-width: 1px; fill: transparent; stroke: rgba(234, 201, 255, 0.62); filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px rgba(219, 219, 219, 0.8)) drop-shadow(0 0 3px rgba(219, 219, 219, 0.5)); -moz-animation: svgAnimation 6s linear infinite; animation: svgAnimation 6s linear infinite; will-change: stroke-dashoffset}
 @keyframes svgAnimation {
-  from {
-    stroke-dashoffset: 0;
-  }
-  to {
-    stroke-dashoffset: 1000;
-  }
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 1000; }
 }
-
 @-moz-keyframes svgAnimation {
-  from {
-    stroke-dashoffset: 0;
-  }
-  to {
-    stroke-dashoffset: 1000;
-  }
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 1000; }
 }
-
 @-webkit-keyframes svgAnimation {
-  from {
-    stroke-dashoffset: 0;
-  }
-  to {
-    stroke-dashoffset: 1000;
-  }
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 1000; }
 }
-
 @-o-keyframes svgAnimation {
-  from {
-    stroke-dashoffset: 0;
-  }
-  to {
-    stroke-dashoffset: 1000;
-  }
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 1000; }
 }
 #main-bt-container a i{display: flex; width: 77px; height: 77px; position: absolute; top: -17px}
 #main-bt-container a.left{background: url("../images/main-bt-left.png") no-repeat center center; background-size: 100%}
