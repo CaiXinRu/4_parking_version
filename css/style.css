@@ -74,7 +74,7 @@ header .header-pic{position: absolute;z-index: 2;width: 100%; height: var(--head
 }
 #header-title{position: absolute; bottom: -28px; display: flex; justify-content: center; align-items:flex-end; width: 100%; height: 104px; z-index: 8; font-size: 1.7rem; color: var(--font-grey)}
 #header-title div{border-bottom: 0.14rem solid var(--font-grey);padding: 0 1.5rem .5rem; margin: 0 0 1rem; font-weight: 600}
-main{position: relative; width: 100%; display: flex; align-items: center; flex-direction: column; min-height: 93%; background: linear-gradient(145deg, #dedede 0%, #ffffff 52%, #ffffff 90%, #e2dee2 100%);margin: -100px 0 0; color: var(--main-font)}
+main{position: relative; width: 100%; display: flex; align-items: center; flex-direction: column; min-height: 93%; background: linear-gradient(145deg, #cacaca 0%, #f3f3f3 52%, #ffffff 80%, #dfdfdf 89%);margin: -100px 0 0; color: var(--main-font)}
 main.nor{padding: 9rem 0}
 main h2{padding: 0 0 2rem; font-size: 2.5rem}
 #nb-container{display: flex; justify-content: space-evenly; min-width: 280px; margin: 0 0 2rem}
@@ -82,7 +82,7 @@ main h2{padding: 0 0 2rem; font-size: 2.5rem}
 #nb-container div::after{content: ''; position:absolute; display: flex;border-radius: .5rem; background: var(--white); width: 100%; height: 100%; transform: scale(1);  transition: transform 0.3s ease-in-out; z-index: 1}
 #nb-container div input[type=text]{display: flex;position: relative; width: 100%; height: 100%; border: none;  font-size: 3.4rem; text-align: center; font-weight: 600; font-family:"Arial Black"; color: #290f64; padding: 0 0 .3rem; background: none; caret-color: transparent; z-index: 2 }
 #nb-container div:focus-within::after{transform: scale(1.2); border: .2rem solid #a76ed7}
-#keyboard-container{display: grid; grid-template-columns: repeat(3, 160px); grid-template-rows: repeat(4, 90px); gap:1.7rem 1.3rem; margin: 2rem 0; background: #eaeaea; position: relative; padding: 2rem 4rem; border-radius: 2rem}
+#keyboard-container{display: grid; grid-template-columns: repeat(3, 160px); grid-template-rows: repeat(4, 90px); gap:1.7rem 1.3rem; margin: 2rem 0; background: #dbdbdb; position: relative; padding: 2rem 4rem; border-radius: 2rem}
 #keyboard-container:after{content: ''; display: flex; position: absolute;z-index: 1;width: 100%; height: 100%; border-width: 3px;  border-style: solid; border-color: transparent; border-radius: 1.9rem; background-image: linear-gradient(143deg, #ece8ed 30%, #fdf7ff 70%, #eae4eb 80%); background-origin: border-box; mask-image: linear-gradient(white, white), linear-gradient(white, white); mask-clip: padding-box, border-box; mask-composite: exclude;}
 #keyboard-container button.tool{font-size: 3rem}
 #keyboard-container button{background: radial-gradient(ellipse at center, #ffffff 50%,#d3d2db 95%);border:.1rem solid #bbc3c8; border-radius: 1.5rem; font-size: 4rem; color: var(--black); font-family: Arial, "sans-serif"; font-weight: bold; cursor: pointer; z-index: 2}
@@ -141,5 +141,48 @@ footer #pay-list-container{position:absolute; bottom: 10px; display: flex; justi
 footer #pat-list-inner{display: flex; flex-wrap: wrap; justify-content: center;padding:0 1rem}
 footer #pat-list-inner p{display: flex; justify-content: center; align-items: center; width: 50px; height: 50px}
 footer #pat-list-inner p img{width: 100%; max-height: 100%; opacity: .8}
+#b-bt-container{display: grid; grid-template-columns: repeat(2, 265px); grid-template-rows: repeat(1, 340px); column-gap: 30px; margin: 2rem 0; position: relative; height: 55%; place-content: center}
+#b-bt-container a{position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; ; font-size: 2.6rem; font-weight: 500; letter-spacing: .1rem; padding: 0 0 0 .1rem; color: var(--main-font)}
+#b-bt-container a span{position: relative; width: 92%; height: 242px; background: var(--white);border-radius: 1rem;margin: 0 0 2rem; display: flex; justify-content: center; align-items: center; box-shadow: 1px 0 2px #bbc3c8,-1px 0 2px #bbc3c8,0 1px 2px #bbc3c8,0 -1px 2px #bbc3c8,inset 0 -1px 30px #bbc3c8}
+#b-bt-container a:active span{background: radial-gradient(ellipse at center, #e2caf9 50%, #ab9db7 95%);box-shadow:1px 0 2px #b964e9,-1px 0 2px #b964e9,0 1px 2px #b964e9,0 -1px 2px #b964e9}
+#b-bt-container a span i{display: flex; width: 168px; height: 168px}
+#b-bt-container a.sct span i{background: url("../images/scooter.svg") no-repeat center center; background-size: 100%}
+#b-bt-container a.car span i{background: url("../images/car.svg") no-repeat center center; background-size: 100%}
+#b-bt-container a svg{position: absolute; width: 100%; height: 100%; left: 2%; top: -7px;overflow: visible}
+#b-bt-container a .line{stroke-dasharray: 260; stroke-width: 1px; fill: transparent; stroke: rgb(234 201 255 / 62%); filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px rgba(219, 219, 219, 0.8)) drop-shadow(0 0 3px rgba(219, 219, 219, 0.5));  animation: svgAnimation 6s linear infinite}
+@keyframes svgAnimation {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+@-moz-keyframes svgAnimation {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+#type-container{position: relative;width: 80%; min-height: 600px; display: flex; justify-content: center; align-items: center; text-align: center; font-size: 2rem;color: var(--black); background: #dbdbdb;border-radius: 1.9rem; margin: 0 auto 5rem}
+#type-container::after{
+	content: '';
+	position: absolute;
+	z-index: 0;
+	width: 100%; height: 100%;
+	font-weight: 600;
+	border-width: 3px;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 1.9rem;
+    background-image: linear-gradient(143deg, #ece8ed 30%, #fdf7ff 70%, #eae4eb 80%);
+    background-origin: border-box;
+    mask-image: linear-gradient(white, white), linear-gradient(white, white);
+    mask-clip: padding-box, border-box;
+    mask-composite: exclude;}
+
 
 
