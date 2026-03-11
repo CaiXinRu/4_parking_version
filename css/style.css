@@ -82,9 +82,9 @@ main h2{padding: 0 0 2rem; font-size: 2.5rem}
 #nb-container{display: flex; justify-content: space-evenly; min-width: 280px; margin: 0 0 1rem}
 #nb-container div{position: relative; display: flex; width: 120px; height: 120px; margin: 0 .5rem}
 #nb-container div::after{content: ''; position:absolute; display: flex;border-radius: .5rem; background: var(--white); width: 100%; height: 100%; transform: scale(1);  transition: transform 0.3s ease-in-out; z-index: 1}
-#nb-container div input[type=text]{display: flex;position: relative; width: 100%; height: 100%; border: none;  font-size: 4.4rem; text-align: center; font-weight: 600; font-family:"Arial Black"; color: #290f64; padding: 0 0 .3rem; background-color: #eaeaea; background: #eaeaea; -moz-appearance: none; appearance: none; caret-color: transparent; z-index: 2; border-radius: 1rem }
+#nb-container div input[type=text]{display: flex;position: relative; width: 100%; height: 100%; border: none;  font-size: 4.4rem; text-align: center; font-weight: 600; font-family:"Arial Black"; color: #290f64; padding: 0 0 .3rem; background-color: #eaeaea; -moz-appearance: none; appearance: none; caret-color: transparent; z-index: 2; border-radius: 1rem }
 #nb-container div:focus-within::after{transform: scale(1.2); border: .2rem solid #a76ed7}
-#keyboard-container{display: grid; grid-template-columns: repeat(3, 135px); grid-template-rows: repeat(4, 90px); gap:1.7rem 1.3rem; margin: 2rem 0; background-color: #eaeaea; background: #eaeaea; position: relative; padding: 2rem 3rem; border-radius: 2rem}
+#keyboard-container{display: grid; grid-template-columns: repeat(3, 135px); grid-template-rows: repeat(4, 90px); gap:1.7rem 1.3rem; margin: 2rem 0; background-color: #eaeaea; position: relative; padding: 2rem 3rem; border-radius: 2rem}
 #keyboard-container:after{content: ''; display: flex; position: absolute;z-index: 1;width: 100%; height: 100%; border-width: 3px;  border-style: solid; border-color: transparent; border-radius: 1.9rem; background-image: linear-gradient(143deg, #ece8ed 30%, #fdf7ff 70%, #eae4eb 80%); background-origin: border-box; mask-image: linear-gradient(white, white), linear-gradient(white, white); mask-clip: padding-box, border-box; mask-composite: exclude;}
 #keyboard-container button.tool{font-size: 30px}
 #keyboard-container button{background: radial-gradient(ellipse at center, #ffffff 50%,#d3d2db 95%);border:.1rem solid #bbc3c8; border-radius: 1.5rem; font-size: 40px; color: var(--black); font-family: Arial, "sans-serif"; font-weight: bold; cursor: pointer; z-index: 2}
@@ -113,10 +113,10 @@ main h2{padding: 0 0 2rem; font-size: 2.5rem}
   100% { stroke-dashoffset: 1000; }
 }
 #main-bt-container a i{display: flex; width: 77px; height: 77px; position: absolute; top: -17px}
-#main-bt-container a.left{background: url("../images/main-bt-left.png") no-repeat center center; background-size: 100%}
-#main-bt-container a.left i{background: url("../images/mb-left-icon.png") no-repeat center center; background-size: 100%}
-#main-bt-container a.right{background: url("../images/main-bt-right.png") no-repeat center center; background-size: 100%}
-#main-bt-container a.right i{background: url("../images/mb-right-icon.png") no-repeat center center; background-size: 100%}
+#main-bt-container a.left{background-image: url("../images/main-bt-left.png"); background-repeat: no-repeat; background-position: center center; background-size: 100%}
+#main-bt-container a.left i{background-color: transparent; background-image: url("../images/mb-left-icon.png"); background-repeat: no-repeat; background-position: center center; background-size: 100%}
+#main-bt-container a.right{background-image: url("../images/main-bt-right.png"); background-repeat: no-repeat; background-position: center center; background-size: 100%}
+#main-bt-container a.right i{background-color: transparent; background-image: url("../images/mb-right-icon.png"); background-repeat: no-repeat; background-position: center center; background-size: 100%}
 footer{position: absolute; width: 100%; min-height: var(--footer-h); bottom: 0;display: flex; justify-content: center; align-items: center}
 footer .footer-pic{position: absolute;z-index: 2;width: 100%; height: var(--footer-h);}
 .footer-mask{-webkit-mask-image: url("../images/footer-bgmask.png");mask-image: url("../images/footer-bgmask.png"); mask-repeat: no-repeat;  mask-size: cover}
