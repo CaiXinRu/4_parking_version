@@ -10,7 +10,7 @@
 	--main-font:#290f64;
 }
 #main-container{position: relative; width: var(--mainsize-w); height: var(--mainsize-h); background: var(--white);color: var(--white); font-size: 1.4rem; display: flex; flex-direction: column; align-items: center}
-.CUT{display:flex; align-items:flex-start; justify-content:center; flex-wrap:wrap; font-family:arial; position: absolute;right: 40px; bottom: -70px; z-index: 9; color: var(--black)}
+.CUT{display:flex; align-items:flex-start; justify-content:center; flex-wrap:wrap; font-family:arial; position: absolute;right: 40px; bottom: -125px; z-index: 9; color: var(--black)}
 .orb_graphic{position:relative}
 /* .orb_graphic:before{content: '倒數'; display: flex; font-size: 1.3rem; position: absolute; width: 100%; justify-content: center; top: -19px} */
 .orb_graphic svg {width:110px;height:110px}
@@ -22,29 +22,30 @@
 	100%  { stroke-dashoffset: 0; }
 }
 .orb_value{position:absolute; top:-2px; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size: 2.6rem; letter-spacing: -.1rem}
-.orb_value:before{content: '秒' ;position:absolute; bottom:17px; right:12px; width:25px; height:25px; display:flex; align-items:center; justify-content:center; font-size: .9rem; letter-spacing: -.1rem; background: #8f38ad; border-radius: 100%; color: var(--white)}
+.orb_value:before{content: '秒' ;position:absolute; bottom:17px; right:12px; width:25px; height:25px; display:flex; align-items:center; justify-content:center; font-size: .9rem; letter-spacing: -.1rem; background: #290f64; border-radius: 100%; color: var(--white)}
 header{position: relative; width: 100%; height: var(--header-h); display: flex; flex-direction: column}
 header .header-pic{position: absolute;z-index: 2;width: 100%; height: var(--header-h);}
 .header-mask{-webkit-mask-image: url("../images/header-bgmask.png");mask-image: url("../images/header-bgmask.png"); mask-repeat: no-repeat;  mask-size: cover}
 #header-inner{position: relative; width: 100%; display: flex; justify-content: space-between; align-items: flex-start; padding:10.5px 1rem 0;z-index: 10}
-#header-inner .time{position: relative; display: flex; flex-direction: column; align-items: center; font-family: Arial; font-size: 1.4rem}
+#header-inner .time{position: relative; display: flex; flex-direction: column; align-items: center; min-width: 150px; font-family: Arial; font-size: 1.4rem}
 #header-inner .time span{position: relative; text-align: center}
-#header-inner .time span:first-child{padding: 0 4px 0px}
-#header-inner .time span:last-child{text-indent: 4px; font-size: 3rem; text-shadow: 1px 1px 2px #00000099, 1px 0 5px #ffffff21, 0 0px 5px #ffffff21, -1px 0 5px #ffffff21, 0 -1px 5px #ffffff21, 0 0 8px #ffffffa8}
-/* #header-inner .time span:first-child:after{content: ''; display: flex; width: 100%; height: 25px; position: absolute;bottom: -25%} */
-#header-inner .time span:last-child:after{content: ''; display: flex; width: 97%; height: 25px; position: absolute; bottom: -36%; left: 5%}
-#header-inner .time .time-date-wrap{display: inline-flex; flex-direction: column; align-items: center}
-#header-inner .time .time-line{display: block; width: 100%; height: 0; border-bottom: 1px solid currentColor; margin-bottom: 2px}
-#header-inner .name{position:relative; width: 180px; height: 80px; display: flex; justify-content: center; align-items: center;margin: 0 -12% 0 0}
+#header-inner .time .time-date-wrap{display: inline-flex; flex-direction: column; align-items: center; width: 100%; padding: 0 4px 0}
+#header-inner .time .time-date{font-size: 1.4rem; letter-spacing: 3px; padding-left: 0.16rem}
+#header-inner .time .time-clock{display: inline-flex; justify-content: center; align-items: center; width: 100%; font-size: 55px; text-shadow: 1px 1px 2px #00000099, 1px 0 5px #ffffff21, 0 0px 5px #ffffff21, -1px 0 5px #ffffff21, 0 -1px 5px #ffffff21, 0 0 8px #ffffffa8}
+#header-inner .time .time-clock span{display: block}
+#header-inner .time .time-clock span + span{margin-left: 0.18rem}
+#header-inner .time .time-date-wrap:after{content: ''; display: flex; width: 100%; height: 25px; position: absolute; bottom: -25%}
+#header-inner .time .time-clock:after{content: ''; display: flex; width: 97%; height: 25px; position: absolute; bottom: -36%; left: 1.5%}
+#header-inner .name{position:relative; width: 180px; height: 80px; display: flex; justify-content: center; align-items: center;margin: 0 -5% 0 0}
 #header-inner .name img{max-width: 100%; max-height: 100%}
-#header-inner .top-tool{position: relative; display: flex; width: 200px; margin: 0 -1.5% 0 0}
+#header-inner .top-tool{position: relative; display: flex; width: 176px; margin: 8px -1.5% 0 0}
 #header-inner .top-tool ul{position: relative; display: flex;justify-content: space-evenly; width: 100%}
-#header-inner .top-tool ul li{position: relative; display: flex; width: 80px; height: 80px}
-#header-inner .top-tool ul li a i{position: relative; display: flex; width: 35px; height: 35px; justify-content: center; align-items: center}
+#header-inner .top-tool ul li{position: relative; display: flex; width: 65px; height: 65px}
+#header-inner .top-tool ul li a i{position: relative; display: flex; width: 25px; height: 25px; justify-content: center; align-items: center}
 #header-inner .top-tool ul li a i img{max-height: 100%; max-width: 100%}
-#header-inner .top-tool ul li a{position: relative; display: flex; flex-direction: column;width: 100%; height: 100%; justify-content: center; align-items: center; font-size: .95rem; font-weight: 600; letter-spacing: .02rem}
+#header-inner .top-tool ul li a{position: relative; display: flex; flex-direction: column;width: 100%; height: 100%; justify-content: center; align-items: center; font-size: .82rem; font-weight: 600; letter-spacing: .01rem}
 #header-inner .top-tool ul li a:active::before{background-image: linear-gradient(143deg, #f5e9ff 30%, #c492d1 70%, #dba9ff 80%);}
-#header-inner .top-tool ul li a::after{content: ''; position: absolute; z-index: -1;display: flex; width: 100%; height: 100%; border: 1px solid #9026ad; border-radius: 22px;animation: glow-breathing 2s ease-in-out infinite;
+#header-inner .top-tool ul li a::after{content: ''; position: absolute; z-index: -1;display: flex; width: 100%; height: 100%; border: 1px solid #9026ad; border-radius: 18px;animation: glow-breathing 2s ease-in-out infinite;
     pointer-events: none;
 }
 
@@ -64,10 +65,10 @@ header .header-pic{position: absolute;z-index: 2;width: 100%; height: var(--head
 	z-index: 0;
 	position: absolute;
 	inset: 0;
-	border-width: 4px;
+	border-width: 3px;
 	border-style: solid;
 	border-color: transparent;
-	border-radius: 22px;
+	border-radius: 18px;
 	background-image: linear-gradient(143deg, #a76ed7 30%, #8f25aa 70%, #a63fef 80%);
 	background-origin: border-box;
 	mask-image: linear-gradient(white, white), linear-gradient(white, white);
@@ -76,15 +77,15 @@ header .header-pic{position: absolute;z-index: 2;width: 100%; height: var(--head
 }
 #header-title{position: absolute; bottom: -28px; display: flex; justify-content: center; align-items:flex-end; width: 100%; height: 104px; z-index: 8; font-size: 1.7rem; color: var(--font-grey)}
 #header-title div{border-bottom: 0.14rem solid var(--font-grey);padding: 0 1.5rem .5rem; margin: 0 0 1rem; font-weight: 600}
-main{position: relative; width: 100%; display: flex; align-items: center; flex-direction: column; min-height: 93%; background: white;margin: -100px 0 0; color: var(--main-font)}
+main{position: relative; width: 100%; display: flex; align-items: center; flex-direction: column; min-height: 93%; background: linear-gradient(145deg, #cacaca 0%, #dbdbdb 52%, #ffffff 80%, #dfdfdf 89%);margin: -100px 0 0; color: var(--main-font)}
 main.nor{padding: 9rem 0}
 main h2{padding: 0 0 2rem; font-size: 2.5rem}
 #nb-container{display: flex; justify-content: space-evenly; min-width: 280px; margin: 0 0 1rem}
 #nb-container div{position: relative; display: flex; width: 120px; height: 144px; margin: 0 .5rem}
 #nb-container div::after{content: ''; position:absolute; display: flex;border-radius: .5rem; background: var(--white); width: 100%; height: 100%; transform: scale(1);  transition: transform 0.3s ease-in-out; z-index: 1}
-#nb-container div input[type=text]{display: flex;position: relative; width: 100%; height: 100%; border: none;  font-size: 4.4rem; text-align: center; font-weight: 600; font-family:"Arial Black"; color: #290f64; padding: 0 0 .3rem; background-color: #eaeaea; -moz-appearance: none; appearance: none; caret-color: transparent; z-index: 2; border-radius: 1rem }
+#nb-container div input[type=text]{display: flex;position: relative; width: 100%; height: 100%; border: none;  font-size: 4.4rem; text-align: center; font-weight: 600; font-family:"Arial Black"; color: #290f64; padding: 0 0 .3rem; background-color: white; -moz-appearance: none; appearance: none; caret-color: transparent; z-index: 2; border-radius: 1rem }
 #nb-container div:focus-within::after{transform: scale(1.2); border: .2rem solid #a76ed7}
-#keyboard-container{display: grid; grid-template-columns: repeat(3, 135px); grid-template-rows: repeat(4, 90px); gap:1.7rem 1.3rem; margin: 2rem 0; background-color: #eaeaea; position: relative; padding: 2rem 3rem; border-radius: 2rem}
+#keyboard-container{display: grid; grid-template-columns: repeat(3, 135px); grid-template-rows: repeat(4, 90px); gap:1.7rem 1.3rem; margin: 2rem 0; background-color: #dbdbdb; position: relative; padding: 2rem 3rem; border-radius: 2rem}
 #keyboard-container:after{content: ''; display: flex; position: absolute;z-index: 1;width: 100%; height: 100%; border-width: 3px;  border-style: solid; border-color: transparent; border-radius: 1.9rem; background-image: linear-gradient(143deg, #ece8ed 30%, #fdf7ff 70%, #eae4eb 80%); background-origin: border-box; mask-image: linear-gradient(white, white), linear-gradient(white, white); mask-clip: padding-box, border-box; mask-composite: exclude;}
 #keyboard-container button.tool{font-size: 30px}
 #keyboard-container button{background: radial-gradient(ellipse at center, #ffffff 50%,#d3d2db 95%);border:.1rem solid #bbc3c8; border-radius: 1.5rem; font-size: 40px; color: var(--black); font-family: Arial, "sans-serif"; font-weight: bold; cursor: pointer; z-index: 2}
