@@ -15,7 +15,7 @@
 /* .orb_graphic:before{content: '倒數'; display: flex; font-size: 1.3rem; position: absolute; width: 100%; justify-content: center; top: -19px} */
 .orb_graphic svg {width:110px;height:110px}
 .orb_graphic svg circle{transform: rotate(-90deg); transform-origin: 50% 50%; stroke-dasharray: 314.16, 314.16;	stroke-width: 5;fill: #ffffff; r: 37px;cx: 55px;cy: 55px}
-.orb_graphic svg circle.fill{stroke: #dbdbdb;filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff);}
+.orb_graphic svg circle.fill{stroke: #bbc3c8;filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff);}
 .orb_graphic svg circle.progress{stroke: url(#myGradient); stroke-linecap:round;transition: stroke-dashoffset 0.35s;stroke-dashoffset: 214.16;	-webkit-animation: count 132s forwards; -webkit-animation-timing-function: linear; filter: drop-shadow(1px 1px 4px rgba(255, 255, 255, 1))}
 @-webkit-keyframes count{
 	0% { stroke-dashoffset: 314.16; }
