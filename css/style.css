@@ -6,9 +6,12 @@
 	--footer-h:246px;
 	--white:#ffffff;
 	--black:#212121;
+	--main-p:#4e566e;
 	--font-grey:#5d5d5d;
+	--font-grey-d:#534f4f;
 	--main-font:#290f64;
 }
+.scroll{position: absolute; top: 0; bottom:0; overflow-y:auto; -webkit-overflow-scrolling: touch;}
 #main-container{position: relative; width: var(--mainsize-w); height: var(--mainsize-h); background: var(--white);color: var(--white); font-size: 1.4rem; display: flex; flex-direction: column; align-items: center}
 .CUT{display:flex; align-items:flex-start; justify-content:center; flex-wrap:wrap; font-family:arial; position: absolute;right: 40px; bottom: -70px; z-index: 9; color: var(--black)}
 .orb_graphic{position:relative}
@@ -74,12 +77,68 @@ header .header-pic{position: absolute;z-index: 2;width: 100%; height: var(--head
 }
 #header-title{position: absolute; bottom: -28px; display: flex; justify-content: center; align-items:flex-end; width: 100%; height: 104px; z-index: 8; font-size: 1.7rem; color: var(--font-grey)}
 #header-title div{border-bottom: 0.14rem solid var(--font-grey);padding: 0 1.5rem .5rem; margin: 0 0 1rem; font-weight: 600}
-main{position: relative; width: 100%; display: flex; align-items: center; flex-direction: column; min-height: 93%; background: linear-gradient(145deg, #cacaca 0%, #f3f3f3 52%, #ffffff 80%, #dfdfdf 89%);margin: -100px 0 0; color: var(--main-font)}
+main{position: relative; width: 100%; display: flex; align-items: center; flex-direction: column; min-height: 93%; background: linear-gradient(145deg, #efefef 0%, #ffffff 52%, #ffffff 80%, #dfdfdf 89%);margin: -100px 0 0; color: var(--main-font)}
 main.nor{padding: 9rem 0}
 main h2{padding: 0 0 2rem; font-size: 2.5rem}
+#popup_bg{position: absolute; top: 0; left: 0; width:100%; height: var(--mainsize-h); display:flex; justify-content: center; align-items: center;background-color:#00000075 ;backdrop-filter: blur(3px); z-index: 98}
+#popupParagraph{background: var(--white); color: var(--font-grey-d); width: 80%; min-height: 200px; max-width: 650px; position: relative; border-radius: 2rem; padding: 2rem; display: flex; flex-direction: column;align-items: center}
+#popupParagraph h1{text-align: center; font-size: 1.6rem; margin:1rem 0 2rem}
+#popupParagraph .CUT{right: 20px;  bottom: unset}
+#popupParagraph.single h1{font-size: 3rem; color: var(--black)}
+#popupParagraph.single #popup-inner .popup-pic{width: 100%; height: 246px; background: url("../images/kioskpic-bgs.png") no-repeat center center; background-size: 100%}
+#popupParagraph.single #popup-inner .popup-pic p{width: 347px; height: 168px; top: 35px; left: 30%}
+#popupParagraph p{font-size: 1.7rem; line-height: 3rem; position: relative; width: auto; display: flex; text-align: center}
+.popup-buttom-bt{position: relative; width: 100%; display: flex; justify-content: space-around; align-items: center; height: 60px}
+.popup-buttom-bt ul{position: relative; width: 100%; display: flex; align-items: stretch; justify-content: space-evenly; height: 100%}
+.popup-buttom-bt ul li{position: relative; width: 50%; height: 100%; display: flex; justify-content: center; align-items: center}
+.popup-buttom-bt ul li a{position: relative; display: flex; width: 250px; height: 100%; justify-content: center;
+ align-items: center; background: var(--main-p) url("../images/popup-bt-bg.png") no-repeat center center; background-size: cover; border-radius: 1.7rem; color: var(--white); font-size: 2.2rem}
+.popup-buttom-bt ul li a:active{background: #493a5d}
+.popup-buttom-bt ul li a:active::before{background-image: linear-gradient(325deg, #4d415d 30%, #6a5587 80%)}
+.popup-buttom-bt ul li a::before{
+	content: "";
+	z-index: 0;
+	position: absolute;
+	inset: 0;
+	border-width: 4px;
+	border-style: solid;
+	border-color: transparent;
+	border-radius: 22px;
+	background-image: linear-gradient(325deg, #8082ad 30%, #b1b3ce 80%);
+	background-origin: border-box;
+	mask-image: linear-gradient(white, white), linear-gradient(white, white);
+	mask-clip: padding-box, border-box;
+	mask-composite: exclude;
+}
+#popup-inner{position: relative; width: 100%; margin:2rem auto 1rem; display: flex; font-size: 1.7rem; justify-content: space-evenly}
+#popup-inner .popup-pic{position: relative; width: 40%; height: 357px; display: flex; background: url("../images/kioskpic-bg.png") no-repeat center center; background-size: 100%}
+#popup-inner .popup-pic p{position:absolute; width: 180px; height: 168px; top: 14px; left: 11%; display: flex; justify-content: center; align-items: center}
+#popup-inner .popup-pic p img{max-height: 100%; max-width: 100%}
+#popup-inner .popup-type{position:relative; width: 60%; padding: 0 0 0 1rem}
+#popup-inner .popup-type ul{position:relative; width: 100%; display: flex; flex-direction: column}
+#popup-inner .popup-type ul::before{content: ""; z-index: 2; position: absolute; width: 100%; height: 100%; border:solid 1px #dad1e2; border-radius: 2.5rem}
+#popup-inner .popup-type ul li{position:relative; width: 100%; display: flex; justify-content: center; align-items: center}
+#popup-inner .popup-type ul li p{position:relative; width: 48%; display: flex; flex-direction: column;justify-content: center; align-items: center}
+#popup-inner .popup-type ul li p:nth-child(2):before{content: ''; display: flex; width: 1px; height: 80%; background: var(--white); position: absolute; left: 0; top: 10%}
+#popup-inner .popup-type ul li p span:first-child{font-size:1.3rem}
+#popup-inner .popup-type ul li p span:nth-child(2){font-size:2.4rem; font-weight: 600; line-height: 2.8rem}
+#popup-inner .popup-type ul li.fee-ca{min-height: 125px; background: var(--main-p); color: var(--white); border-radius: 2.5rem 2.5rem 0 0; padding: 1.5rem 0 1rem; box-shadow: inset 2px 2px 8px #00000047, 2px 7px 5px #ffffff, 2px 0 7px #c9c9c9; z-index: 1}
+#popup-inner .popup-type ul li.fee-ca::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    height: 12px;
+    background: linear-gradient(to bottom, transparent, white);
+}
+#popup-inner .popup-type ul li.fee-am{min-height: 155px; color: var(--black); box-shadow:inset -3px 7px 4px #fff,inset 2px 2px 8px #00000012, 2px 2px 6px #e3e3e3; z-index: 0; margin: -10px 0 0; border-radius: 0 0 2.5rem 2.5rem}
+#popup-inner .popup-type ul li.fee-am p span:nth-child(2){font-size:4rem; font-weight: 600; line-height: 4rem}
 #nb-container{display: flex; justify-content: space-evenly; min-width: 280px; margin: 0 0 2rem}
 #nb-container div{position: relative; display: flex; width: 70px; height: 80px; margin: 0 .5rem}
-#nb-container div::after{content: ''; position:absolute; display: flex;border-radius: .5rem; background: var(--white); width: 100%; height: 100%; transform: scale(1);  transition: transform 0.3s ease-in-out; z-index: 1}
+#nb-container div{position: relative; display: flex; width: 70px; height: 80px; margin: 0 .5rem}
+#nb-container.more div:not(:last-child){margin: 0 .7rem 0 0}
+#nb-container div::after{content: ''; position:absolute; display: flex;border-radius: .5rem; background: #dbdbdb; width: 100%; height: 100%; transform: scale(1);  transition: transform 0.3s ease-in-out; z-index: 1}
 #nb-container div input[type=text]{display: flex;position: relative; width: 100%; height: 100%; border: none;  font-size: 3.4rem; text-align: center; font-weight: 600; font-family:"Arial Black"; color: #290f64; padding: 0 0 .3rem; background: none; caret-color: transparent; z-index: 2 }
 #nb-container div:focus-within::after{transform: scale(1.2); border: .2rem solid #a76ed7}
 #keyboard-container{display: grid; grid-template-columns: repeat(3, 160px); grid-template-rows: repeat(4, 90px); gap:1.7rem 1.3rem; margin: 2rem 0; background: #dbdbdb; position: relative; padding: 2rem 4rem; border-radius: 2rem}
@@ -87,13 +146,13 @@ main h2{padding: 0 0 2rem; font-size: 2.5rem}
 #keyboard-container button.tool{font-size: 3rem}
 #keyboard-container button{background: radial-gradient(ellipse at center, #ffffff 50%,#d3d2db 95%);border:.1rem solid #bbc3c8; border-radius: 1.5rem; font-size: 4rem; color: var(--black); font-family: Arial, "sans-serif"; font-weight: bold; cursor: pointer; z-index: 2}
 #keyboard-container button:focus{background: radial-gradient(ellipse at center, #e2caf9 50%, #ab9db7 95%);border:.1rem solid #b964e9}
-#main-bt-container{display: flex; justify-content: space-around; align-items: center; margin: .5rem 0; z-index: 999; width: 75%}
+#main-bt-container{display: flex; justify-content: space-around; align-items: center; margin: .5rem 0; z-index: 20; width: 75%}
 #main-bt-container a{position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; border-radius: .5rem; font-size: 2.5rem; font-weight: 500; letter-spacing: .1rem; padding: 0 0 0 .1rem; width: 240px; height: 102px; margin: -1rem .4rem 0; text-shadow: 1px 0 5px #fff,0 1px 5px #fff,-1px 0 5px #fff,0 -1px 5px #fff,2px 0 5px #fff,0 2px 5px #fff,-2px 0 5px #fff,0 -2px 5px #fff}
 #main-bt-container a{position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; border-radius: .5rem; font-size: 2.7rem; font-weight: 500; letter-spacing: .1rem; padding: 0 0 0 .1rem; width: 240px; height: 102px; margin: -1rem .4rem 0; text-shadow: 1px 0 5px #fff,0 1px 5px #fff,-1px 0 5px #fff,0 -1px 5px #fff, 1px 0 5px #fff,0 1px 5px #fff,-1px 0 5px #fff,0 -1px 5px #fff}
 #main-bt-container a:active{color: #dfcded}
 #main-bt-container a:active i{opacity: .7}
 #main-bt-container a svg{position: absolute; width: 100%; height: 100%; left: 2%; top: 10%;overflow: visible;z-index: -1}
-#main-bt-container a .line{stroke-dasharray: 260; stroke-width: 1px; fill: transparent; stroke: rgb(234 201 255 / 62%); filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px rgba(219, 219, 219, 0.8)) drop-shadow(0 0 3px rgba(219, 219, 219, 0.5));  animation: svgAnimation 6s linear infinite}
+#main-bt-container a .line{stroke-dasharray: 260; stroke-width: 1px; fill: transparent; stroke: rgb(234 201 255 / 100%); filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px rgba(219, 219, 219, 0.8)) drop-shadow(0 0 3px rgba(219, 219, 219, 0.5));  animation: svgAnimation 6s linear infinite}
 @keyframes svgAnimation {
   from {
     stroke-dashoffset: 0;
@@ -134,44 +193,40 @@ main h2{padding: 0 0 2rem; font-size: 2.5rem}
 #main-bt-container a.left i{background: url("../images/mb-left-icon.png") no-repeat center center; background-size: 100%}
 #main-bt-container a.right{background: url("../images/main-bt-right.png") no-repeat center center; background-size: 100%}
 #main-bt-container a.right i{background: url("../images/mb-right-icon.png") no-repeat center center; background-size: 100%}
+#main-control-container{position:relative; display:flex; width:108%; height: 100px; margin: 3rem 0 2rem; justify-content: space-between; align-items: center;z-index: 9}
+#main-control-container a{display: flex; width: 190px; height: 80px; align-items: center; font-size: 1.8rem; font-weight: 600; color: #6129ab}
+#main-control-container a i{display: flex; width: 24px; height: 24px}
+#main-control-container a.prev i{background: url("../images/prev-icon.svg") no-repeat center center; background-size: 100%; margin: 0 .5rem 0 0}
+#main-control-container a.prev{background: url("../images/prev_bt.png") no-repeat center center; background-size: 100%; position:relative; padding: 0 5px 0 25px}
+#main-control-container a.prev:active{background: url("../images/prev_bt_over.png") no-repeat center center; background-size: 100%}
+#main-control-container a.next i{background: url("../images/next-icon.svg") no-repeat center center; background-size: 100%; position:relative; margin: 0 0 0 .5rem}
+#main-control-container a.next{background: url("../images/next_bt.png") no-repeat center center; background-size: 100%; position:relative;flex-direction: row-reverse; padding: 0 25px 0 5px}
+#main-control-container a.next:active{background: url("../images/next_bt_over.png") no-repeat center center; background-size: 100%}
 footer{position: absolute; width: 100%; min-height: var(--footer-h); bottom: 0;display: flex; justify-content: center; align-items: center}
-footer .footer-pic{position: absolute;z-index: 2;width: 100%; height: var(--footer-h);}
+footer.inner #pay-list-container{display: none}
+footer .footer-pic{position: absolute;z-index: 2;width: 100%; height: var(--footer-h)}
+footer .footer-pic:before{content: ''; position: absolute; background: url("../images/mplogo-bg.svg") no-repeat center center; background-size: 100%; width: 115px; height: 98px; right: 5px; top: 41%; z-index: 2;filter: drop-shadow(0 0 4px #fff) blur(0.6px);}
+footer .footer-pic:after{content: ''; position: absolute; z-index: 1; background: url("../images/mplogo-bg2.svg") no-repeat center center; background-size: 100%; width: 117px; height: 100px; animation: glow-breathing 2s ease-in-out infinite;pointer-events: none; right: 5px; top: 41%}
 .footer-mask{-webkit-mask-image: url("../images/footer-bgmask.png");mask-image: url("../images/footer-bgmask.png"); mask-repeat: no-repeat;  mask-size: cover}
 footer #pay-list-container{position:absolute; bottom: 10px; display: flex; justify-content: center; align-items: center; width: 75%; min-height: 120px; border-radius: 5rem; background: #ffffff38;backdrop-filter: blur(5px); border:1px solid #a63fef; z-index: 10; box-shadow: 0 0 7px #5d5d5dad, inset 2px 1px 5px #ffffff30}
 footer #pat-list-inner{display: flex; flex-wrap: wrap; justify-content: center;padding:0 1rem}
 footer #pat-list-inner p{display: flex; justify-content: center; align-items: center; width: 50px; height: 50px}
 footer #pat-list-inner p img{width: 100%; max-height: 100%; opacity: .8}
 #b-bt-container{display: grid; grid-template-columns: repeat(2, 265px); grid-template-rows: repeat(1, 340px); column-gap: 30px; margin: 2rem 0; position: relative; height: 55%; place-content: center}
-#b-bt-container a{position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; ; font-size: 2.6rem; font-weight: 500; letter-spacing: .1rem; padding: 0 0 0 .1rem; color: var(--main-font)}
-#b-bt-container a span{position: relative; width: 92%; height: 242px; background: var(--white);border-radius: 1rem;margin: 0 0 2rem; display: flex; justify-content: center; align-items: center; box-shadow: 1px 0 2px #bbc3c8,-1px 0 2px #bbc3c8,0 1px 2px #bbc3c8,0 -1px 2px #bbc3c8,inset 0 -1px 30px #bbc3c8}
+#b-bt-container a{position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 2.6rem; font-weight: 500; letter-spacing: .1rem; padding: 0 0 0 .1rem; color: var(--main-font)}
+#b-bt-container a span{position: relative; width: 92%; height: 242px; background: var(--white);border-radius: 1rem;margin: 0 0 1rem; display: flex; justify-content: center; align-items: center; box-shadow: 1px 0 2px #bbc3c8,-1px 0 2px #bbc3c8,0 1px 2px #bbc3c8,0 -1px 2px #bbc3c8,inset 0 -1px 30px #bbc3c8}
 #b-bt-container a:active span{background: radial-gradient(ellipse at center, #e2caf9 50%, #ab9db7 95%);box-shadow:1px 0 2px #b964e9,-1px 0 2px #b964e9,0 1px 2px #b964e9,0 -1px 2px #b964e9}
-#b-bt-container a span i{display: flex; width: 168px; height: 168px}
+#b-bt-container a span i{display: flex; width: 168px; height: 168px;filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));}
 #b-bt-container a.sct span i{background: url("../images/scooter.svg") no-repeat center center; background-size: 100%}
 #b-bt-container a.car span i{background: url("../images/car.svg") no-repeat center center; background-size: 100%}
-#b-bt-container a svg{position: absolute; width: 100%; height: 100%; left: 2%; top: -7px;overflow: visible}
-#b-bt-container a .line{stroke-dasharray: 260; stroke-width: 1px; fill: transparent; stroke: rgb(234 201 255 / 62%); filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px rgba(219, 219, 219, 0.8)) drop-shadow(0 0 3px rgba(219, 219, 219, 0.5));  animation: svgAnimation 6s linear infinite}
-@keyframes svgAnimation {
-  from {
-    stroke-dashoffset: 0;
-  }
-  to {
-    stroke-dashoffset: 1000;
-  }
-}
-
-@-moz-keyframes svgAnimation {
-  from {
-    stroke-dashoffset: 0;
-  }
-  to {
-    stroke-dashoffset: 1000;
-  }
-}
-#type-container{position: relative;width: 80%; min-height: 600px; display: flex; justify-content: center; align-items: center; text-align: center; font-size: 2rem;color: var(--black); background: #dbdbdb;border-radius: 1.9rem; margin: 0 auto 5rem}
-#type-container::after{
+#b-bt-container a span svg{position: absolute; width: 100%; height: 100%; left: -2%; top: -2%;overflow: visible}
+#b-bt-container a span .line{stroke-dasharray: 260; stroke-width: 1px; fill: transparent; stroke: rgb(234 201 255 / 100%); filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px rgba(219, 219, 219, 0.8)) drop-shadow(0 0 3px rgba(219, 219, 219, 0.5));  animation: svgAnimation 6s linear infinite}
+#type-container{position: relative;width: 80%; min-height: 600px; display: flex; justify-content: center; align-items: center; text-align: center; font-size: 2rem;color: var(--black); background: linear-gradient(145deg, #efefef 0%, #d9d9d9 52%, #ffffff 80%);border-radius: 1.9rem; margin: 0 auto 5rem}
+#type-container::after,#lice-out::after{
 	content: '';
 	position: absolute;
 	z-index: 0;
+	top: 0;
 	width: 100%; height: 100%;
 	font-weight: 600;
 	border-width: 3px;
@@ -182,7 +237,98 @@ footer #pat-list-inner p img{width: 100%; max-height: 100%; opacity: .8}
     background-origin: border-box;
     mask-image: linear-gradient(white, white), linear-gradient(white, white);
     mask-clip: padding-box, border-box;
-    mask-composite: exclude;}
+    mask-composite: exclude;
+}
+#lice-out{position: relative; width: 90%; min-height: 600px;display: flex; flex-direction: column; align-items: center;background: linear-gradient(145deg, #efefef 0%, #d9d9d9 20%, #ffffff 90%);border-radius: 1.9rem; padding: 35px 0 0; margin: 2rem 0 3rem}
+#lice-out::before{
+	content: '';
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	width: 100%; height: 43%;
+	background: linear-gradient(to bottom, transparent, white);
+}
+#lice-bt-container{display: grid; grid-template-columns: repeat(2, 294px); grid-template-rows: repeat(2, 210px); gap:2rem;z-index: 9}
+#lice-bt-container a{background:#f7f7f7 url("../images/pic-org.png") no-repeat center center; background-size: 85%; display: flex; justify-content: center; align-items: center;border-radius: .5rem; position: relative;box-shadow: 1px 0 2px #bbc3c8, -1px 0 2px #bbc3c8, 0 1px 2px #bbc3c8, 0 -1px 2px #bbc3c8, inset 0 -1px 60px #bbc3c8;}
+#lice-bt-container a:active:before{content:''; display: flex; width: 100%; height: 100%; border:3px solid var(--sec-color); z-index: 9; position: absolute; left:0; top: 0; border-radius: .5rem}
+#lice-bt-container a:active:after{content:''; display: flex; width: 100%; height: 100%; z-index: 1; position: absolute; left:0; top: 0; border-radius: .5rem; background: #3a425b69}
+#lice-bt-container a svg{position: absolute; width: 104%; height: 106%; left: -2%; top: -3%;overflow: visible}
+#lice-bt-container a .line{stroke-dasharray: 260; stroke-width: 1px; fill: transparent; stroke: rgb(234 201 255 / 100%); filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px rgba(219, 219, 219, 0.8)) drop-shadow(0 0 3px rgba(219, 219, 219, 0.5));  animation: svgAnimation 6s linear infinite}
+#lice-bt-container a span{font-size: 1.7rem; color: #000; background: #fff; position: absolute; right: 0; bottom: 0; padding: 2px 10px 2px 0; border-radius: 0 0 .5rem}
+#lice-bt-container a .type span:before,#checkout-pic-container .type:before{content: ''; position: absolute; top:0; left:-40px; width: 45px; height: 100%; background: var(--white);transform: skewX(-30deg); transform-origin: bottom right; border-radius: 15px 0 0 0; z-index: -1}
+#lice-bt-container a .type p{display: flex; height: 80%; align-items: center}
+#lice-bt-container a .type{display: flex; flex-direction: column;width: 100%; height: 80%; z-index: 2; justify-content: space-between; align-items: center; color: var(--grey-color)}
+#lice-bt-container a .img{position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: flex; z-index: 1; overflow: hidden; border-radius: .5rem; padding: 0}
+#payment-out{position: relative; display: flex; width: 100%; margin: .5rem auto 1rem; justify-content: center; align-items: center}
+#payment-out #payment-bt-container{position: relative; width: 90%; display: flex; margin:0 0 1rem; height: 720px; overflow: hidden}
+#payment-out #payment-bt-container ul{position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; padding: 5px 0 0}
+#payment-out #payment-bt-container ul li{position: relative; width: 100%; display: flex; justify-content: center; align-items: center;z-index: 0; margin: 0 0 2.5rem}
+#payment-out #payment-bt-container ul li:last-child{margin: 0}
+#payment-out #payment-bt-container ul li a{position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: center;width: 200px; height: 130px; font-size: 1.8rem; font-weight: 500; padding: 0 0 .5rem .1rem; color: var(--main-font); margin: 0 1rem 0 0}
+#payment-out #payment-bt-container ul li a:active span{background: radial-gradient(ellipse at center, #e2caf9 50%, #ab9db7 95%);box-shadow:1px 0 2px #b964e9,-1px 0 2px #b964e9,0 1px 2px #b964e9,0 -1px 2px #b964e9}
+#payment-out #payment-bt-container ul li a i{display: flex; width: 120px; height: 70px;filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.15));margin: -43px 0 0}
+#payment-out #payment-bt-container ul li a.card i,#payment-out #payment-bt-container.rebate ul li a.recard i{background: url("../images/pay-card.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container ul li a.iccard i{background: url("../images/pay-iccard.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container ul li a.mobile i{background: url("../images/pay-mobile.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container ul li a.qrcode i{background: url("../images/pay-qrcode.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rebate ul li a.paper i{background: url("../images/rebaet-paper.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rebate ul li a.member i{background: url("../images/rebaet-member.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rebate ul li a.coupon i{background: url("../images/rebaet-coupon.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rec{height: 853px}
+#payment-out #payment-bt-container.rec ul li a.paper i{background: url("../images/rec-paper.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rec ul li a.tax i{background: url("../images/rec-tax.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rec ul li a.mobile i{background: url("../images/rec-mobile.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rec ul li a.benefit i{background: url("../images/rec-benefit.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rec ul li a.card i{background: url("../images/rec-card.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container ul li a span{position: absolute; z-index: -1; width: 100%; height: 100%; background: var(--white);border-radius: 1rem;display: flex; justify-content: center; align-items: center; box-shadow: 1px 0 2px #bbc3c8,-1px 0 2px #bbc3c8,0 1px 2px #bbc3c8,0 -1px 2px #bbc3c8,inset 0 -1px 30px #bbc3c8; bottom: 0}
+#payment-out #payment-bt-container ul li a span svg{position: absolute; width: 100%; height: 100%; left: -2%; top: -2%;overflow: visible}
+#payment-out #payment-bt-container ul li a span .line{stroke-dasharray: 260; stroke-width: 1px; fill: transparent; stroke: rgb(234 201 255 / 100%); filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px rgba(219, 219, 219, 0.8)) drop-shadow(0 0 3px rgba(219, 219, 219, 0.5));  animation: svgAnimation 6s linear infinite}
+#payment-out #payment-bt-container .payment-list-container{position: relative; display: flex; flex-direction: column; width: 40%; height: 100%; justify-content: space-evenly; align-items: center; color: var(--font-grey-d); font-weight: 600}
+#payment-out #payment-bt-container .payment-list-container .pm-mark{position: relative; display: flex; flex-wrap: wrap; min-width: 90%; justify-content: space-evenly; align-items: center; color: var(--font-grey-d); font-weight: 600}
+#payment-out #payment-bt-container.rebate .payment-list-container,#payment-out #payment-bt-container.rec .payment-list-container{align-items: flex-start; font-size: 1.7rem; margin: 0 0 0 2rem}
+#payment-main{position: relative; width: 95%; height: 73%; display: flex; justify-content: center;flex-wrap: wrap;align-content: stretch;}
+#checkout-container{position: relative; width: 63%; margin: 0 2% 0 0; display: flex; flex-direction: column; align-items: center}
+#checkout-paysel{position: relative; width: 30%; display: flex}
+#checkout-pic-container{position: relative; width: 416px; height: 292px; display: flex}
+#checkout-pic-container .pic{position: absolute; z-index: 1; width: 100%; height: 100%; border-radius: .5rem; overflow: hidden;background: var(--main-p) url("../images/pic-orgw.png") no-repeat center center; background-size: 293px; box-shadow: 2px 0 1px #bbc3c8,0 2px 1px #bbc3c8,-2px 0 1px #bbc3c8,0 -2px 1px #bbc3c8; display: flex; justify-content: center; align-items: center}
+#checkout-pic-container .pic img{max-width: 100%; max-height: 100%}
+#checkout-pic-container .type{position: absolute; z-index: 2; background: #fff; min-width: 86%; bottom: 0; right: 0; line-height: 2.5rem; display: flex; align-items: center; justify-content: space-evenly; padding: 2px 10px 2px 0; border-radius: 0 0 .5rem; color: #000; font-size: 1.7rem}
+#checkout-pic-container .type span{padding: 0 .5rem; display: flex; align-items: center; position: relative}
+#checkout-pic-container .type span span{font-size: 1.2rem}
+#checkout-pic-container .type span:not(:first-child):before{content: ''; display: flex; margin: 0 1rem 0 0; background: #afafaf; width: 1px; height: 72%;position: absolute; left: 0; top: 16%}
+#checkout-list-container{display: flex; position: relative; width: 100%; min-height: 350px; margin:0 auto 1rem; color: var(--black);background: linear-gradient(180deg,rgba(239, 239, 239, 1) 0%, rgba(255, 255, 255, 0.53) 19%, rgba(255, 255, 255, 0.53) 84%, rgba(239, 239, 239, 1) 100%); border-radius: 2.5rem; padding: 2rem; font-size: 1.3rem; box-shadow: 0 -2px 1px #e8e8ef,0 2px 1px #e8e8ef}
+#checkout-list-container .checkout-inner{position: relative; width: 100%; min-height: 80%; display: flex; flex-direction: column; justify-content: space-evenly}
+#checkout-list-container .checkout-inner ul{position: relative; width: 100%; min-height: 30%; margin: 0 0 6% 0; display: flex; justify-content: space-evenly}
+#checkout-list-container .checkout-inner ul li{position: relative; display: flex; flex-direction: column}
+#checkout-list-container .checkout-inner ul li:first-child{width: 57%}
+#checkout-list-container .checkout-inner ul li:nth-child(2){width: 35%; padding: 0 0 0 1%}
+#checkout-list-container .checkout-inner ul li:nth-child(2):before{content: ''; display:flex; width: 2px; height: 100%; background: var(--main-p); position: absolute; left: -13%; top: 0}
+#checkout-list-container .checkout-inner ul li:first-child span:nth-child(2){text-align: center; font-size: 4rem; line-height: 4rem; font-weight: 600; color: var(--main-p); padding: 0 1rem 0 0}
+#checkout-list-container .checkout-inner ul li:nth-child(2) span:first-child{margin: 0 0 .5rem}
+#checkout-list-container .checkout-inner ul li:nth-child(2) span:nth-child(2){text-align: center; font-size: 3rem; line-height: 3rem; font-weight: 600; color: #959595}
+#checkout-list-container .timer{margin: 0 0 0 1.5rem}
+#checkout-list-container .timer p span b{margin: 0 .5rem}
+#checkout-list-container .detail-ch{font-size: .9rem; margin: .5rem 0 .5rem 1.5rem; position: relative}
+#checkout-list-container .detail-ch p{background: var(--main-p); border-radius: .5rem; padding:.2rem .5rem; color: var(--white); font-weight: 500; display: flex; justify-content: center; align-items: center}
+#checkout-list-container .detail-ch p span{display: flex; justify-content: center; align-items: center}
+#checkout-list-container .detail-ch p span:not(:first-child):before{content: '/'; margin: 0 .5rem; transform: rotateX(50deg); display: flex}
+#checkout-list-container .detail-ch .min:before{content: ''; display: flex; width: 16px; height: 15px; background: url("../images/plugBG.png") no-repeat center center; background-size: 100%; position: absolute; left: -16px; bottom: -8px}
+#checkout-list-container .detail-ch .min:after{content: ''; display: flex; width: 4px; height: 25px; background: var(--main-p); transform: skewX(-23deg); position: absolute;right: -5px; bottom: -2px}
+#checkout-list-container .detail-ch .min{display: flex; border-bottom: solid 2px var(--main-p); right: 16px; position: absolute; justify-content: flex-end; padding: 0 10px}
+#checkout-list-container .detail-ch .min span{display: flex}
+#checkout-list-container .detail-ch .min span:not(:first-child):before{content: '/'; margin: 0 .5rem; transform: rotateX(50deg); display: flex}
+#checkout-pay-inner{position: relative; width: 100%}
+#checkout-pay-inner ul{position: relative; width: 100%; display: flex; flex-direction: column; align-items: center}
+#checkout-pay-inner ul li{position: relative; width: 94%; display: flex; justify-content: center; align-items: center;z-index: 0; margin: 0 0 2.2rem; padding: .5rem 0}
+#checkout-pay-inner ul li a{position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;width: 100%; height: 168px; font-size: 2rem; font-weight: 500; padding: 1rem 0 0 .1rem; color: var(--main-font)}
+#checkout-pay-inner ul li a:active span{background: radial-gradient(ellipse at center, #e2caf9 50%, #ab9db7 95%);box-shadow:1px 0 2px #b964e9,-1px 0 2px #b964e9,0 1px 2px #b964e9,0 -1px 2px #b964e9}
+#checkout-pay-inner ul li a i{display: flex; width: 140px; height: 86px;filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.15));margin:0 0 -43px}
+#checkout-pay-inner ul li a.cash i{background: url(../images/pay-cash.svg) no-repeat center center; background-size: 100%}
+#checkout-pay-inner ul li a.rebate i{background: url(../images/pay-rebate.svg) no-repeat center center; background-size: 100%}
+#checkout-pay-inner ul li a.other i{background: url(../images/pay-other.svg) no-repeat center center; background-size: 100%}
+#checkout-pay-inner ul li a span{position: absolute; z-index: -1; width: 100%; height: 100%; background: var(--white);border-radius: 1.5rem;display: flex; justify-content: center; align-items: center; box-shadow: 1px 0 2px #bbc3c8,-1px 0 2px #bbc3c8,0 1px 2px #bbc3c8,0 -1px 2px #bbc3c8,inset 0 -1px 30px #bbc3c8; bottom: 0}
+#checkout-pay-inner ul li a span svg{position: absolute; width: 100%; height: 100%; left: -2%; top: -3%;overflow: visible}
+#checkout-pay-inner ul li a span .line{stroke-dasharray: 260; stroke-width: 1px; fill: transparent; stroke: rgb(234 201 255 / 100%); filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px rgba(219, 219, 219, 0.8)) drop-shadow(0 0 3px rgba(219, 219, 219, 0.5));  animation: svgAnimation 6s linear infinite}
 
 
 
