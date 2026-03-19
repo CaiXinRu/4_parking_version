@@ -10,13 +10,12 @@
 	--main-p:#4e566e;
 	--font-grey:#5d5d5d;
 	--font-grey-d:#534f4f;
-	--main-font:#290f64;
+	--main-font:#412187;
 }
 .scroll{position: absolute; top: 0; bottom:0; overflow-y:auto; -webkit-overflow-scrolling: touch;}
 #main-container{position: relative; width: var(--mainsize-w); height: var(--mainsize-h); background: var(--white);color: var(--white); font-size: 1.4rem; display: flex; flex-direction: column; align-items: center}
-.CUT{display:flex; align-items:flex-start; justify-content:center; flex-wrap:wrap; font-family:arial; position: absolute;right: 40px; bottom: -70px; z-index: 9; color: var(--black)}
+.CUT{display:flex; align-items:flex-start; justify-content:center; flex-wrap:wrap; font-family:arial; position: absolute;right: 40px; bottom: -130px; z-index: 9; color: var(--black)}
 .orb_graphic{position:relative}
-.orb_graphic:before{content: '倒數'; display: flex; font-size: 1.3rem; position: absolute; width: 100%; justify-content: center; top: -19px}
 .orb_graphic svg {width:110px;height:110px}
 .orb_graphic svg circle{transform: rotate(-90deg); transform-origin: 50% 50%; stroke-dasharray: 314.16, 314.16;	stroke-width: 5;fill: #efefef12; r: 37px;cx: 55px;cy: 55px}
 .orb_graphic svg circle.fill{stroke: #dfdbdf;filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff);}
@@ -26,58 +25,30 @@
 	100%  { stroke-dashoffset: 0; }
 }
 .orb_value{position:absolute; top:-2px; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size: 2.6rem; letter-spacing: -.1rem}
-.orb_value:before{content: '秒' ;position:absolute; bottom:17px; right:12px; width:25px; height:25px; display:flex; align-items:center; justify-content:center; font-size: .9rem; letter-spacing: -.1rem; background: #8f38ad; border-radius: 100%; color: var(--white)}
+.orb_value:before{content: '秒' ;position:absolute; bottom:17px; right:12px; width:25px; height:25px; display:flex; align-items:center; justify-content:center; font-size: .9rem; letter-spacing: -.1rem; background: var(--main-font); border-radius: 100%; color: var(--white)}
 header{position: relative; width: 100%; height: var(--header-h); display: flex; flex-direction: column}
 header .header-pic{position: absolute;z-index: 2;width: 100%; height: var(--header-h);}
 .header-mask{-webkit-mask-image: url("../images/header-bgmask.png");mask-image: url("../images/header-bgmask.png"); mask-repeat: no-repeat;  mask-size: cover}
 #header-inner{position: relative; width: 100%; display: flex; justify-content: space-between; align-items: flex-start; padding:1rem 1rem 0;z-index: 10}
-#header-inner .time{position: relative; display: flex; flex-direction: column; align-items: center; font-family: Arial; font-size: 1.4rem}
+#header-inner .time{position: relative; display: flex; flex-direction: column; align-items: center; font-family: Arial; font-weight: 600; font-size: 1.6rem; margin:-5px 0 0 15px}
 #header-inner .time span{position: relative; text-align: center}
-#header-inner .time span:first-child{text-indent: 7px; padding: 0 4px 5px}
-#header-inner .time span:last-child{text-indent: 4px; font-size: 3rem; text-shadow: 1px 1px 2px #00000099, 1px 0 5px #ffffff21, 0 0px 5px #ffffff21, -1px 0 5px #ffffff21, 0 -1px 5px #ffffff21, 0 0 8px #ffffffa8}
+#header-inner .time span:first-child{text-indent: 7px}
+#header-inner .time span:last-child{text-indent: 4px; letter-spacing: .15rem; font-size: 3rem; text-shadow: 1px 1px 2px #00000099, 1px 0 5px #ffffff21, 0 0px 5px #ffffff21, -1px 0 5px #ffffff21, 0 -1px 5px #ffffff21, 0 0 8px #ffffffa8}
 #header-inner .time span:first-child:after{content: ''; display: flex; width: 100%; height: 25px; position: absolute;bottom: -25%}
 #header-inner .time span:last-child:after{content: ''; display: flex; width: 97%; height: 25px; position: absolute; bottom: -36%; left: 5%}
-#header-inner .name{position:relative; width: 180px; height: 80px; display: flex; justify-content: center; align-items: center;margin: 0 -12% 0 0}
+#header-inner .name{position:relative; width: 180px; height: 80px; display: flex; justify-content: center; align-items: center}
 #header-inner .name img{max-width: 100%; max-height: 100%}
-#header-inner .top-tool{position: relative; display: flex; width: 200px; margin: 0 -1.5% 0 0}
+#header-inner .top-tool{position: relative; display: flex; width: 170px; margin: 0 -1% 0 0}
 #header-inner .top-tool ul{position: relative; display: flex;justify-content: space-evenly; width: 100%}
-#header-inner .top-tool ul li{position: relative; display: flex; width: 80px; height: 80px}
-#header-inner .top-tool ul li a i{position: relative; display: flex; width: 35px; height: 35px; justify-content: center; align-items: center}
+#header-inner .top-tool ul li{position: relative; display: flex; width: 65px; height: 65px}
+#header-inner .top-tool ul li a i{position: relative; display: flex; width: 25px; height: 25px; justify-content: center; align-items: center}
 #header-inner .top-tool ul li a i img{max-height: 100%; max-width: 100%}
-#header-inner .top-tool ul li a{position: relative; display: flex; flex-direction: column;width: 100%; height: 100%; justify-content: center; align-items: center; font-size: .95rem; font-weight: 600; letter-spacing: .02rem}
-#header-inner .top-tool ul li a:active::before{background-image: linear-gradient(143deg, #f5e9ff 30%, #c492d1 70%, #dba9ff 80%);}
-#header-inner .top-tool ul li a::after{content: ''; position: absolute; z-index: -1;display: flex; width: 100%; height: 100%; border: 1px solid #9026ad; border-radius: 22px;animation: glow-breathing 2s ease-in-out infinite;
-    pointer-events: none;
-}
-
-@keyframes glow-breathing {
-    0%, 100% {
-        filter: drop-shadow(0 0 1px #fff) 
-                drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
-    }
-    50% {
-        filter: drop-shadow(0 0 2px #fff) 
-                drop-shadow(0 0 3px rgba(255, 255, 255, 0.9)) 
-                drop-shadow(0 0 5px rgba(255, 255, 255, 0.6));
-    }
-}
-#header-inner .top-tool ul li a::before{
-	content: "";
-	z-index: 0;
-	position: absolute;
-	inset: 0;
-	border-width: 4px;
-	border-style: solid;
-	border-color: transparent;
-	border-radius: 22px;
-	background-image: linear-gradient(143deg, #a76ed7 30%, #8f25aa 70%, #a63fef 80%);
-	background-origin: border-box;
-	mask-image: linear-gradient(white, white), linear-gradient(white, white);
-	mask-clip: padding-box, border-box;
-	mask-composite: exclude;
-}
-#header-title{position: absolute; bottom: -28px; display: flex; justify-content: center; align-items:flex-end; width: 100%; height: 104px; z-index: 8; font-size: 1.7rem; color: var(--font-grey)}
-#header-title div{border-bottom: 0.14rem solid var(--font-grey);padding: 0 1.5rem .5rem; margin: 0 0 1rem; font-weight: 600}
+#header-inner .top-tool ul li a{position: relative; display: flex; flex-direction: column;width: 100%; height: 100%; justify-content: center; align-items: center; font-size: .8rem; font-weight: 500; letter-spacing: .02rem; background: #eed5a1; border-radius: 22px;filter:drop-shadow(0 0 1px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 1px rgba(0, 0, 0, 1))  drop-shadow(0 0 1px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.6)); color: #000000; border:1px solid var(--white)}
+#header-inner .top-tool ul li a:active{background: #fdcd69; border: none; filter: none}
+#header-inner .top-tool ul li a:active:after{background: radial-gradient(ellipse at center, #ffc857 39%, #d7a63e 100%)}
+#header-inner .top-tool ul li a:after{content: ''; display: flex; width: 52%; height: 10px;position: absolute;z-index: 0; background: radial-gradient(ellipse at center, #ffedc8 39%, #ffe4ab 100%); border-radius: 100%; filter: blur(2px); bottom: 2px; left: 4px; opacity: .8;transform: rotate(14deg);}
+#header-title{position: absolute; bottom: -28px; display: flex; justify-content: center; align-items:flex-end; width: 100%; height: 104px; z-index: 8; font-size: 1.7rem; color: #000000; text-align: center}
+#header-title div{border-bottom: 0.14rem solid var(--font-grey);padding: 0 1.5rem .5rem; margin: 0 0 1rem; font-weight: 600; max-width: 60%; max-height: 90px; overflow: hidden}
 .donate-qr{position: absolute;z-index: 9; overflow: hidden; top: 135px; left: 0; padding: 15px 20px 15px 15px; color: #ac81d5; text-align: center; line-height: 1.4rem; font-size: 1.2rem}
 .donate-qr:after{content: ''; display: flex; width: 100%; height: 100%; position: absolute; border: 1px solid #ac81d5; border-left: none; top: 0; left: 0; border-radius: 0 2rem 2rem 0;-webkit-mask-image: url(../images/header-bgmask.png);
     mask-image: url(../images/code-mask.png);
@@ -170,30 +141,34 @@ main h2{padding: 0 0 2rem; font-size: 2.5rem}
 #popup-inner .popup-type ul li.fee-am{min-height: 155px; color: var(--black); box-shadow:inset -3px 7px 4px #fff,inset 2px 2px 8px #00000012, 2px 2px 6px #e3e3e3; z-index: 0; margin: -10px 0 0; border-radius: 0 0 2.5rem 2.5rem}
 #popup-inner .popup-type ul li.fee-am p span:nth-child(2){font-size:4rem; font-weight: 600; line-height: 4rem}
 #nb-container{display: flex; justify-content: space-evenly; min-width: 280px; margin: 0 0 2rem}
-#nb-container div{position: relative; display: flex; width: 70px; height: 80px; margin: 0 .5rem}
-#nb-container.long div{width: 400px}
+#nb-container div{position: relative; display: flex; width: 80px; height: 88px; margin: 0 .5rem}
+#nb-container.four div{width: 120px; height: 140px}
+#nb-container.four div input[type=text]{font-size: 4.4rem}
+#nb-container.long div{width: 542px}
 #nb-container.more div{margin: 0 .7rem 0 0}
 #nb-container.more div:last-child{margin:0}
-#nb-container div::after{content: ''; position:absolute; display: flex;border-radius: .5rem; background: var(--keybg); width: 100%; height: 100%; transform: scale(1);  transition: transform 0.3s ease-in-out; z-index: 1}
-#nb-container div input[type=text]{display: flex;position: relative; width: 100%; height: 100%; border: none;  font-size: 3.4rem; text-align: center; font-weight: 600; font-family:"Arial Black"; color: #290f64; padding: 0 0 .3rem; background: none; caret-color: transparent; z-index: 2 }
+#nb-container div::after{content: ''; position:absolute; display: flex;border-radius: .5rem; border: solid 1px #bdbdbd; width: 100%; height: 100%; transform: scale(1);  transition: transform 0.3s ease-in-out; z-index: 1}
+#nb-container div input[type=text]{display: flex;position: relative; width: 100%; height: 100%; border: none;  font-size: 4rem; text-align: center; font-weight: 600; font-family:"Arial Black"; color: var(--main-font); padding: 0 0 .3rem; background: none; caret-color: transparent; z-index: 2 }
 #nb-container div:focus-within::after{transform: scale(1.2); border: .2rem solid #a76ed7}
-#keyboard-container{display: grid; grid-template-columns: repeat(3, 160px); grid-template-rows: repeat(4, 90px); gap:1.7rem 1.3rem; margin: 2rem 0; background: var(--keybg); position: relative; padding: 2rem 4rem; border-radius: 2rem}
+#keyboard-container{display: grid; grid-template-columns: repeat(3, 135px); grid-template-rows: repeat(4, 90px); gap:1.7rem 1.3rem; margin: 2rem 0; background: var(--keybg); position: relative; padding: 2rem 3rem; border-radius: 2rem}
 #keyboard-container:after{content: ''; display: flex; position: absolute;z-index: 1;width: 100%; height: 100%; border-width: 3px;  border-style: solid; border-color: transparent; border-radius: 1.9rem; background-image: linear-gradient(143deg, #ece8ed 30%, #fdf7ff 70%, #eae4eb 80%); background-origin: border-box; mask-image: linear-gradient(white, white), linear-gradient(white, white); mask-clip: padding-box, border-box; mask-composite: exclude;}
-#keyboard-container button.tool{font-size: 3rem}
-#keyboard-container button{background: radial-gradient(ellipse at center, #ffffff 50%,#d3d2db 95%);border:.1rem solid #bbc3c8; border-radius: 1.5rem; font-size: 4rem; color: var(--black); font-family: Arial, "sans-serif"; font-weight: bold; cursor: pointer; z-index: 2}
-#keyboard-container button:focus{background: radial-gradient(ellipse at center, #e2caf9 50%, #ab9db7 95%);border:.1rem solid #b964e9}
+#keyboard-container button.tool{font-size: 2.2rem}
+#keyboard-container button{background: radial-gradient(ellipse at center, #ffffff 50%,#d3d2db 95%);border:.1rem solid #bbc3c8; border-radius: 1.5rem; font-size: 2.6rem; color: var(--black); font-family: Arial, "sans-serif"; font-weight: bold; cursor: pointer; z-index: 2}
+#keyboard-container button:focus{background: var(--main-font);border:none; color: var(--white)}
 #keyb-container{position: relative; width: 95%; background: var(--keybg);border-radius: 2rem; display: flex; flex-direction: column; align-items: center; padding: 2rem 1rem; margin: 0 0 5rem}
 .receipt-keyboard{display: grid; grid-template-columns: repeat(10,65px); grid-template-rows: repeat(4,65px); gap:.8rem .3rem; margin: 1rem auto .5rem}
-.receipt-keyboard a{font-size: 2.7rem;background: radial-gradient(ellipse at center, #ffffff 50%,#d3d2db 95%);border:.1rem solid #bbc3c8; border-radius: 1rem; color:var(--black);font-weight: 600; display: flex; justify-content: center; align-items: center; font-family: Arial, "sans-serif"}
-.receipt-keyboard a:focus{background: radial-gradient(ellipse at center, #e2caf9 50%, #ab9db7 95%);border:.1rem solid #b964e9}
+.receipt-keyboard a{font-size: 2rem;background: radial-gradient(ellipse at center, #ffffff 50%,#d3d2db 95%);border:.1rem solid #bbc3c8; border-radius: 1rem; color:var(--black);font-weight: 600; display: flex; justify-content: center; align-items: center; font-family: Arial, "sans-serif"}
+.receipt-keyboard a:focus,#keyboard-del a:focus{background: var(--main-font); color: var(--white)}
 #keyboard-del{position: relative; width: 52%; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(1,80px); column-gap: 1.6rem; margin: 1rem auto}
-#keyboard-del a{font-size: 2.6rem; background: radial-gradient(ellipse at center, #ffffff 40%,#d3d2db 100%);border:.1rem solid #bbc3c8; border-radius: 1rem; color:var(--black); font-weight: 600; display: flex; justify-content: center; align-items: center; font-family: Arial, "sans-serif"}
+#keyboard-del a{font-size: 2.3rem; background: radial-gradient(ellipse at center, #ffffff 40%,#d3d2db 100%);border:.1rem solid #bbc3c8; border-radius: 1rem; color:var(--black); font-weight: 600; display: flex; justify-content: center; align-items: center; font-family: Arial, "sans-serif"}
 #main-bt-container{display: flex; justify-content: space-around; align-items: center; margin: .5rem 0; z-index: 20; width: 75%}
-#main-bt-container a{position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; border-radius: .5rem; font-size: 2.5rem; font-weight: 500; letter-spacing: .1rem; padding: 0 0 0 .1rem; width: 240px; height: 102px; margin: -1rem .4rem 0; text-shadow: 1px 0 5px #fff,0 1px 5px #fff,-1px 0 5px #fff,0 -1px 5px #fff,2px 0 5px #fff,0 2px 5px #fff,-2px 0 5px #fff,0 -2px 5px #fff}
-#main-bt-container a{position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; border-radius: .5rem; font-size: 2.7rem; font-weight: 500; letter-spacing: .1rem; padding: 0 0 0 .1rem; width: 240px; height: 102px; margin: -1rem .4rem 0; text-shadow: 1px 0 5px #fff,0 1px 5px #fff,-1px 0 5px #fff,0 -1px 5px #fff, 1px 0 5px #fff,0 1px 5px #fff,-1px 0 5px #fff,0 -1px 5px #fff}
-#main-bt-container a:active{color: #dfcded}
-#main-bt-container a:active i{opacity: .7}
-#main-bt-container a svg{position: absolute; width: 100%; height: 100%; left: 2%; top: 10%;overflow: visible;z-index: -1}
+#main-bt-container a{position: relative; display: flex; justify-content: center; align-items: center; border-radius: 2.5rem; font-size: 2.7rem; color: var(--white) ;font-weight: 500; letter-spacing: .1rem; padding: 0 0 0 .1rem; width: 240px; height: 80px; margin: -1rem .4rem 0}
+#main-bt-container a:after{content: ''; display: flex; width: 80%; height: 20px;position: absolute;z-index: 0; background: radial-gradient(ellipse at center, #b3a6d1 39%,#dcccff 100%); ; border-radius: 100%; filter: blur(2px); bottom: 0; opacity: .2}
+#main-bt-container a:before{content: ''; display: flex; width: 90%; height: 20px;position: absolute;z-index: -1; background: radial-gradient(ellipse at center, rgba(150,140,175,1) 0%,rgba(150,140,175,0.61) 39%,rgba(179,173,214,0) 100%) ; border-radius: 100%; filter: blur(4px); bottom: -16px}
+#main-bt-container a.left:active,#main-bt-container a.right:active{background: #412187}
+#main-bt-container a:active:before{bottom: -8px}
+#main-bt-container a:active svg,#main-bt-container a:active:after{display: none}
+#main-bt-container a svg{position: absolute; width: 100%; height: 100%;overflow: visible;z-index: 1}
 #main-bt-container a .line{stroke-dasharray: 260; stroke-width: 1px; fill: transparent; stroke: rgb(234 201 255 / 100%); filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px rgba(219, 219, 219, 0.8)) drop-shadow(0 0 3px rgba(219, 219, 219, 0.5));  animation: svgAnimation 6s linear infinite}
 @keyframes svgAnimation {
   from {
@@ -230,11 +205,12 @@ main h2{padding: 0 0 2rem; font-size: 2.5rem}
     stroke-dashoffset: 1000;
   }
 }
-#main-bt-container a i{display: flex; width: 77px; height: 77px; position: absolute; top: -17px}
-#main-bt-container a.left{background: url("../images/main-bt-left.png") no-repeat center center; background-size: 100%}
-#main-bt-container a.left i{background: url("../images/mb-left-icon.png") no-repeat center center; background-size: 100%}
-#main-bt-container a.right{background: url("../images/main-bt-right.png") no-repeat center center; background-size: 100%}
-#main-bt-container a.right i{background: url("../images/mb-right-icon.png") no-repeat center center; background-size: 100%}
+#main-bt-container a i{display: flex; width: 55px; height: 55px; position:relative}
+#main-bt-container a span{display: flex; position:relative}
+#main-bt-container a.left{background:  linear-gradient(to right, #71239e 0%,#363685 61%); }
+#main-bt-container a.left i{background: url("../images/mb-left-icon.png") no-repeat center center; background-size: 100%; margin: 0 1rem 0 0}
+#main-bt-container a.right{background:  linear-gradient(to right, #363685 39%,#71239e 100%); flex-direction: row-reverse}
+#main-bt-container a.right i{background: url("../images/mb-right-icon.png") no-repeat center center; background-size: 100%; margin: 0 0 0 1rem}
 #main-control-container{position:relative; display:flex; width:108%; height: 100px; margin: 3rem 0 2rem; justify-content: space-between; align-items: center;z-index: 9}
 #main-control-container a{display: flex; width: 190px; height: 80px; align-items: center; font-size: 1.8rem; font-weight: 600; color: #6129ab}
 #main-control-container a i{display: flex; width: 24px; height: 24px}
@@ -244,13 +220,22 @@ main h2{padding: 0 0 2rem; font-size: 2.5rem}
 #main-control-container a.next i{background: url("../images/next-icon.svg") no-repeat center center; background-size: 100%; position:relative; margin: 0 0 0 .5rem}
 #main-control-container a.next{background: url("../images/next_bt.png") no-repeat center center; background-size: 100%; position:relative;flex-direction: row-reverse; padding: 0 25px 0 5px}
 #main-control-container a.next:active{background: url("../images/next_bt_over.png") no-repeat center center; background-size: 100%}
-footer{position: absolute; width: 100%; min-height: var(--footer-h); bottom: 0;display: flex; justify-content: center; align-items: center}
+footer{position: absolute; width: 100%; min-height: var(--footer-h); bottom: 0;display: flex; justify-content: center; align-items: self-end}
 footer.inner #pay-list-container{display: none}
 footer .footer-pic{position: absolute;z-index: 2;width: 100%; height: var(--footer-h)}
 footer .footer-pic:before{content: ''; position: absolute; background: url("../images/mplogo-bg.svg") no-repeat center center; background-size: 100%; width: 115px; height: 98px; right: 5px; top: 41%; z-index: 2;filter: drop-shadow(1px 0 1px #cdcdcd) drop-shadow(0 1px 2px #ffffff) drop-shadow(0 0 px #ffffffb0) blur(0.2px);}
 footer .footer-pic:after{content: ''; position: absolute; z-index: 1; background: url("../images/mplogo-bg2.svg") no-repeat center center; background-size: 100%; width: 117px; height: 100px; animation: glow-breathing 1s ease-in-out infinite;pointer-events: none; right: 5px; top: 41%}
+@keyframes glow-breathing {
+    0%, 100% {
+        filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 3px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 5px rgba(255, 255, 255, 0.6));
+    }
+}
 .footer-mask{-webkit-mask-image: url("../images/footer-bgmask.png");mask-image: url("../images/footer-bgmask.png"); mask-repeat: no-repeat;  mask-size: cover}
-footer #pay-list-container{position:absolute; bottom: 10px; display: flex; justify-content: center; align-items: center; width: 75%; min-height: 120px; border-radius: 5rem; background: #ffffff38;backdrop-filter: blur(5px); border:1px solid #a63fef; z-index: 10; box-shadow: 0 0 7px #5d5d5dad, inset 2px 1px 5px #ffffff30}
+footer #pay-list-container{position:absolute; display: flex; justify-content: center; align-items: center; width: 75%; min-height: 80px; max-height: 120px; border-radius: 5rem; background: #ffffff38;backdrop-filter: blur(5px); z-index: 10; box-shadow: 0 0 7px #5d5d5dad, inset 2px 1px 5px #ffffff30; margin: 0 0 2rem}
 footer #pat-list-inner{display: flex; flex-wrap: wrap; justify-content: center;padding:0 1rem}
 footer #pat-list-inner p{display: flex; justify-content: center; align-items: center; width: 50px; height: 50px}
 footer #pat-list-inner p img{width: 100%; max-height: 100%; opacity: .8}
@@ -307,21 +292,35 @@ footer #pat-list-inner p img{width: 100%; max-height: 100%; opacity: .8}
 #payment-out #payment-bt-container ul li{position: relative; width: 100%; display: flex; justify-content: center; align-items: center;z-index: 0; margin: 0 0 2.5rem}
 #payment-out #payment-bt-container ul li:last-child{margin: 0}
 #payment-out #payment-bt-container ul li a{position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: center;width: 200px; height: 130px; font-size: 1.8rem; font-weight: 500; padding: 0 0 .5rem .1rem; color: var(--main-font); margin: 0 1rem 0 0}
-#payment-out #payment-bt-container ul li a:active span{background: radial-gradient(ellipse at center, #e2caf9 50%, #ab9db7 95%);box-shadow:1px 0 2px #b964e9,-1px 0 2px #b964e9,0 1px 2px #b964e9,0 -1px 2px #b964e9}
+#payment-out #payment-bt-container ul li a:active{color: var(--white)}
+#payment-out #payment-bt-container ul li a:active svg{display: none}
+#payment-out #payment-bt-container ul li a:active span{background: var(--main-font);box-shadow:none}
 #payment-out #payment-bt-container ul li a i{display: flex; width: 120px; height: 70px;filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.15));margin: -43px 0 0}
 #payment-out #payment-bt-container ul li a.card i,#payment-out #payment-bt-container.rebate ul li a.recard i{background: url("../images/pay-card.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container ul li a.card:active i,#payment-out #payment-bt-container.rebate ul li a.recard:active i{background: url("../images/pay-card-w.svg") no-repeat center center; background-size: 100%}
 #payment-out #payment-bt-container ul li a.iccard i{background: url("../images/pay-iccard.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container ul li a.iccard:active i{background: url("../images/pay-iccard-w.svg") no-repeat center center; background-size: 100%}
 #payment-out #payment-bt-container ul li a.mobile i{background: url("../images/pay-mobile.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container ul li a.mobile:active i{background: url("../images/pay-mobile-w.svg") no-repeat center center; background-size: 100%}
 #payment-out #payment-bt-container ul li a.qrcode i{background: url("../images/pay-qrcode.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container ul li a.qrcode:active i{background: url("../images/pay-qrcode-w.svg") no-repeat center center; background-size: 100%}
 #payment-out #payment-bt-container.rebate ul li a.paper i{background: url("../images/rebaet-paper.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rebate ul li a.paper:active i{background: url("../images/rebaet-paper-w.svg") no-repeat center center; background-size: 100%}
 #payment-out #payment-bt-container.rebate ul li a.member i{background: url("../images/rebaet-member.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rebate ul li a.member:active i{background: url("../images/rebaet-member-w.svg") no-repeat center center; background-size: 100%}
 #payment-out #payment-bt-container.rebate ul li a.coupon i{background: url("../images/rebaet-coupon.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rebate ul li a.coupon:active i{background: url("../images/rebaet-coupon-w.svg") no-repeat center center; background-size: 100%}
 #payment-out #payment-bt-container.rec{height: 853px}
 #payment-out #payment-bt-container.rec ul li a.paper i{background: url("../images/rec-paper.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rec ul li a.paper:active i{background: url("../images/rec-paper-w.svg") no-repeat center center; background-size: 100%}
 #payment-out #payment-bt-container.rec ul li a.tax i{background: url("../images/rec-tax.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rec ul li a.tax:active i{background: url("../images/rec-tax-w.svg") no-repeat center center; background-size: 100%}
 #payment-out #payment-bt-container.rec ul li a.mobile i{background: url("../images/rec-mobile.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rec ul li a.mobile:active i{background: url("../images/rec-mobile-w.svg") no-repeat center center; background-size: 100%}
 #payment-out #payment-bt-container.rec ul li a.benefit i{background: url("../images/rec-benefit.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rec ul li a.benefit:active i{background: url("../images/rec-benefit-w.svg") no-repeat center center; background-size: 100%}
 #payment-out #payment-bt-container.rec ul li a.card i{background: url("../images/rec-card.svg") no-repeat center center; background-size: 100%}
+#payment-out #payment-bt-container.rec ul li a.card:active i{background: url("../images/rec-card-w.svg") no-repeat center center; background-size: 100%}
 #payment-out #payment-bt-container ul li a span{position: absolute; z-index: -1; width: 100%; height: 100%; background: var(--white);border-radius: 1rem;display: flex; justify-content: center; align-items: center; box-shadow: 1px 0 2px #bbc3c8,-1px 0 2px #bbc3c8,0 1px 2px #bbc3c8,0 -1px 2px #bbc3c8,inset 0 -1px 30px #bbc3c8; bottom: 0}
 #payment-out #payment-bt-container ul li a span svg{position: absolute; width: 100%; height: 100%; left: -2%; top: -2%;overflow: visible}
 #payment-out #payment-bt-container ul li a span .line{stroke-dasharray: 260; stroke-width: 1px; fill: transparent; stroke: rgb(234 201 255 / 100%); filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px rgba(219, 219, 219, 0.8)) drop-shadow(0 0 3px rgba(219, 219, 219, 0.5));  animation: svgAnimation 6s linear infinite}
@@ -363,11 +362,17 @@ footer #pat-list-inner p img{width: 100%; max-height: 100%; opacity: .8}
 #checkout-pay-inner ul{position: relative; width: 100%; display: flex; flex-direction: column; align-items: center}
 #checkout-pay-inner ul li{position: relative; width: 94%; display: flex; justify-content: center; align-items: center;z-index: 0; margin: 0 0 2.2rem; padding: .5rem 0}
 #checkout-pay-inner ul li a{position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;width: 100%; height: 168px; font-size: 2rem; font-weight: 500; padding: 1rem 0 0 .1rem; color: var(--main-font)}
-#checkout-pay-inner ul li a:active span{background: radial-gradient(ellipse at center, #e2caf9 50%, #ab9db7 95%);box-shadow:1px 0 2px #b964e9,-1px 0 2px #b964e9,0 1px 2px #b964e9,0 -1px 2px #b964e9}
+#checkout-pay-inner ul li a:active{color: var(--white)}
+#checkout-pay-inner ul li a:active span{background: var(--main-font);box-shadow:none}
+#checkout-pay-inner ul li a:active{color: var(--white)}
+#checkout-pay-inner ul li a:active svg{display: none}
 #checkout-pay-inner ul li a i{display: flex; width: 140px; height: 86px;filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.15));margin:0 0 -43px}
 #checkout-pay-inner ul li a.cash i{background: url(../images/pay-cash.svg) no-repeat center center; background-size: 100%}
+#checkout-pay-inner ul li a.cash:active i{background: url(../images/pay-cash-w.svg) no-repeat center center; background-size: 100%}
 #checkout-pay-inner ul li a.rebate i{background: url(../images/pay-rebate.svg) no-repeat center center; background-size: 100%}
+#checkout-pay-inner ul li a.rebate:active i{background: url(../images/pay-rebate-w.svg) no-repeat center center; background-size: 100%}
 #checkout-pay-inner ul li a.other i{background: url(../images/pay-other.svg) no-repeat center center; background-size: 100%}
+#checkout-pay-inner ul li a.other:active i{background: url(../images/pay-other-w.svg) no-repeat center center; background-size: 100%}
 #checkout-pay-inner ul li a span{position: absolute; z-index: -1; width: 100%; height: 100%; background: var(--white);border-radius: 1.5rem;display: flex; justify-content: center; align-items: center; box-shadow: 1px 0 2px #bbc3c8,-1px 0 2px #bbc3c8,0 1px 2px #bbc3c8,0 -1px 2px #bbc3c8,inset 0 -1px 30px #bbc3c8; bottom: 0}
 #checkout-pay-inner ul li a span svg{position: absolute; width: 100%; height: 100%; left: -2%; top: -3%;overflow: visible}
 #checkout-pay-inner ul li a span .line{stroke-dasharray: 260; stroke-width: 1px; fill: transparent; stroke: rgb(234 201 255 / 100%); filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px rgba(219, 219, 219, 0.8)) drop-shadow(0 0 3px rgba(219, 219, 219, 0.5));  animation: svgAnimation 6s linear infinite}

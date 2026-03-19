@@ -1,0 +1,31 @@
+.EN #header-title{font-size: 1.5rem}
+.EN main h2{font-size: 2.2rem}
+.EN .orb_value:before{content: 'sec'}
+.EN #header-inner .top-tool ul li a{font-size: .7rem}
+.EN #header-inner .top-tool ul li a::before{border-width:3px}
+.EN #main-bt-container a{letter-spacing: -.1rem}
+.EN .receipt-keyboard {
+	grid-template-columns: repeat(20, 30px); 
+    grid-template-rows: repeat(4, 65px); 
+    width: fit-content;
+}
+
+.EN .receipt-keyboard a {
+    grid-column: span 2; 
+}
+
+.EN .receipt-keyboard a.del{
+    grid-column: span 4; 
+    font-size: 2.4rem; 
+	letter-spacing: -0.1rem;
+    background: radial-gradient(ellipse at center, #fdfdfd 49%, #b0b0b0 140%);
+}
+
+.EN .receipt-keyboard a.clear{
+    grid-column: span 4; 
+    font-size: 2.4rem; 
+	letter-spacing: -0.1rem;
+    background: radial-gradient(ellipse at center, #fdfdfd 49%, #b0b0b0 140%);
+	padding: 0 0 0 .5rem
+}
+.EN .receipt-keyboard a.del:focus,.EN .receipt-keyboard a.clear:focus{background: radial-gradient(ellipse at center, #e2caf9 50%, #ab9db7 95%);border:.1rem solid #b964e9}
